@@ -4,6 +4,9 @@ Token cost is a design problem, not a billing problem. Most LLM cost overruns co
 
 This tool is a token waste profiler that helps you understand where your tokens are going and which ones are useless. It's like `valgrind` for LLMs.
 
+<img width="1417" height="450" alt="Screenshot 2026-01-18 225918" src="https://github.com/user-attachments/assets/f65b0e77-5df0-4f02-bad8-15daf035d43c" />
+
+
 ## The Problem
 
 Most LLM systems waste 30-60% of their tokens on:
