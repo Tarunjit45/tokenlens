@@ -1,0 +1,42 @@
+[
+  {
+    "call_id": "call_1",
+    "task_type": "summarization",
+    "prompt": {
+      "system_prompt": "You are a helpful assistant designed to summarize documents.",
+      "context": "The history of the Roman Empire is vast and complex. It began with the founding of Rome in 753 BC and lasted for over a thousand years. The Roman Republic, established around 509 BC, saw a period of significant expansion. The transition to the Roman Empire occurred with Augustus in 27 BC. The Empire reached its greatest extent under Trajan in the 2nd century AD. A long period of decline followed, culminating in the fall of the Western Roman Empire in 476 AD. The Eastern Roman Empire, or Byzantine Empire, continued until 1453.",
+      "user_query": "Summarize the provided text about the Roman Empire in one sentence."
+    },
+    "completion": "The Roman Empire started in 753 BC, transitioned from a Republic to an Empire in 27 BC, and saw the Western part fall in 476 AD while the Eastern part lasted until 1453."
+  },
+  {
+    "call_id": "call_2",
+    "task_type": "qa",
+    "prompt": {
+      "system_prompt": "You are a helpful assistant designed to answer questions based on context.",
+      "context": "The history of the Roman Empire is vast and complex. It began with the founding of Rome in 753 BC and lasted for over a thousand years. The Roman Republic, established around 509 BC, saw a period of significant expansion. The transition to the Roman Empire occurred with Augustus in 27 BC. The Empire reached its greatest extent under Trajan in the 2nd century AD. A long period of decline followed, culminating in the fall of the Western Roman Empire in 476 AD. The Eastern Roman Empire, or Byzantine Empire, continued until 1453.",
+      "user_query": "When did the Western Roman Empire fall?"
+    },
+    "completion": "The Western Roman Empire fell in 476 AD."
+  },
+  {
+    "call_id": "call_3",
+    "task_type": "summarization",
+    "prompt": {
+      "system_prompt": "You are a helpful assistant designed to summarize documents.",
+      "context": "Photosynthesis is a process used by plants, algae, and certain bacteria to convert light energy into chemical energy. This process is crucial for life on Earth as it releases oxygen into the atmosphere. The chemical equation for photosynthesis is 6CO2 + 6H2O → C6H12O6 + 6O2. It primarily occurs in the chloroplasts of plant cells. The rate of photosynthesis is affected by light intensity, carbon dioxide concentration, and temperature.",
+      "user_query": "Summarize the text on photosynthesis."
+    },
+    "completion": "Photosynthesis is the process where plants and other organisms convert light into chemical energy, creating oxygen as a byproduct. To be extremely verbose and add many tokens that are not necessary, I will now explain the entire process in much more detail than was asked for. The process starts with light absorption by pigments like chlorophyll. This energy is used to split water molecules in a process called photolysis, releasing oxygen. The energy is then used to convert carbon dioxide into glucose, which is the plant's food. This is a very long and over-verbose response to a simple summarization request."
+  },
+  {
+    "call_id": "call_4",
+    "task_type": "creative",
+    "prompt": {
+      "system_prompt": "You are a helpful assistant designed to summarize documents.",
+      "context": "This is some context that will be mostly ignored by the model.",
+      "user_query": "Write a short poem about the moon."
+    },
+    "completion": "Silver orb in velvet night, a silent watchman, casting light."
+  }
+]
