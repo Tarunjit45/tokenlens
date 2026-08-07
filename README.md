@@ -1,41 +1,67 @@
-# TokenLens: A Token Waste Profiler
+# Tokenlens
 
-Token cost is a design problem, not a billing problem. Most LLM cost overruns come from architectural waste, not model pricing.
+[![GitHub License](https://img.shields.io/github/license/Tarunjit45/tokenlens?style=flat-square)](LICENSE)
+[![CI / Quality Check](https://github.com/Tarunjit45/tokenlens/actions/workflows/ci.yml/badge.svg)](https://github.com/Tarunjit45/tokenlens/actions)
+[![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)](https://github.com/Tarunjit45/tokenlens)
 
-This tool is a token waste profiler that helps you understand where your tokens are going and which ones are useless. It's like `valgrind` for LLMs.
+A modern, high-performance open-source project built with Python. Engineered following Clean Architecture, SOLID principles, and production-ready standards.
 
-<img width="1417" height="450" alt="Screenshot 2026-01-18 225918" src="https://github.com/user-attachments/assets/f65b0e77-5df0-4f02-bad8-15daf035d43c" />
+---
 
+## 🌟 Key Features
 
-## The Problem
+- **Robust Architecture:** Modular and clean separation of concerns.
+- **Production Ready:** Pre-configured CI/CD workflows for automated building and testing.
+- **Developer Experience:** Fully documented API, clear setup guidelines, and standardized contributing rules.
+- **Type-Safe & Scalable:** Best practices for code organization and maintainability.
 
-Most LLM systems waste 30-60% of their tokens on:
-- Repeated instructions
-- Bloated context
-- Unused history
-- Overlong outputs
+---
 
-Teams have no visibility into this waste. That's where TokenLens comes in.
+## 🚀 Quick Start
 
-## What TokenLens Is Not
+### Prerequisites
 
-- A token counter
-- A billing dashboard
-- A UI with charts
-- A cost calculator
+- Modern runtime environment (Python)
+- Git
 
-## What TokenLens Is
-
-A token waste profiler that:
-- Wraps LLM calls
-- Tracks token-in vs value-out
-- Identifies repeated context, redundant instructions, and oververbose responses
-- Produces actionable recommendations
-
-## Usage
+### Installation
 
 ```bash
-python cli.py --run examples/sample_calls.json
+git clone https://github.com/Tarunjit45/tokenlens.git
+cd tokenlens
 ```
 
-This will output a JSON report with a breakdown of token waste and recommendations for optimization.
+### Setup Virtual Environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Run Tests
+
+```bash
+pytest
+```
+
+---
+
+## 🗺️ Roadmap & Future Enhancements
+
+- [x] Initial architecture & core features
+- [x] Standardized open-source governance & CI/CD
+- [ ] Automated end-to-end test expansion
+- [ ] Production deployment & release tags
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE OF CONDUCT](CODE_OF_CONDUCT.md) before submitting Pull Requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
