@@ -1,71 +1,89 @@
-# 🚀 tokenlens
+# 🔍 TokenLens — Architectural Token Waste & Cost Profiler for LLMs
 
-![Language](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Production-Active-success?style=for-the-badge)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![CLI](https://img.shields.io/badge/CLI-TokenLens-FF5722?style=for-the-badge)](cli.py)
+[![Focus](https://img.shields.io/badge/Focus-LLM%20Cost%20Optimization-00C853?style=for-the-badge)](README.md)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## 📌 Overview
+> *"Token cost is a design problem, not a billing problem."*
 
-Token cost is a design problem, not a billing problem. Most LLM cost overruns come from architectural waste, not model pricing.  This tool is a token waste profiler that helps you understand where your tokens are going and which ones are useless.
+Most LLM cost overruns don't come from model provider pricing—they come from **architectural waste**: redundant system instructions, bloated conversation histories, uncompressed tool schemas, and repetitive context injections.
 
-## ✨ Key Features & Architecture
+**TokenLens** is a token waste profiler that audits LLM traces, dissects prompt overhead, and identifies exactly where tokens are being wasted.
 
-- **High-Performance Codebase:** Built using `Python` and modern engineering principles.
-- **Modular & Scalable Design:** Structured directory tree for seamless development and deployment.
+---
 
-## 🛠️ Tech Stack & Dependencies
+## 📌 What TokenLens Audits
 
-- **Core Language:** `Python`
-- **Libraries & Tools:** Python
-- **Deployment Infrastructure:** Vercel Edge / Cloud Services
+```
++-------------------------------------------------------------+
+|                      Captured LLM Trace                     |
+|                 (JSON export from LangChain/Llama)          |
++-------------------------------------------------------------+
+                              |
+                              v  `cli.py --run trace.json`
++-------------------------------------------------------------+
+|                 Token Profiler (`profiler.py`)              |
+|        Dissects prompt into System, History, Tools, User    |
++-------------------------------------------------------------+
+                              |
+                              v  `heuristics.py`
++-------------------------------------------------------------+
+|                  Waste Detection Heuristics                 |
+|  - Repetitive Few-Shot Examples    - Redundant Tool Schemas |
+|  - Runaway Chat History Bloat      - Unused Context Chunks  |
++-------------------------------------------------------------+
+                              |
+                              v  `report.py`
++-------------------------------------------------------------+
+|                  Token Waste Scorecard & Savings            |
+|       Estimated % cost reduction & actionable optimizations |
++-------------------------------------------------------------+
+```
 
-## 📁 Architecture & File Layout
+---
+
+## 📁 Repository Structure
 
 ```text
 tokenlens/
-├── .github
-├── .github/ISSUE_TEMPLATE
-├── .github/ISSUE_TEMPLATE/bug_report.md
-├── .github/ISSUE_TEMPLATE/feature_request.md
-├── .github/PULL_REQUEST_TEMPLATE.md
-├── .github/workflows
-├── .github/workflows/ci.yml
-├── .gitignore
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── analyzer.py
-├── cli.py
-├── examples
-└── ... [additional codebase files]
+├── cli.py             # TokenLens CLI entry point (`python cli.py --run <file>`)
+├── profiler.py        # `LLMCallProfiler` token decomposition engine
+├── analyzer.py        # Multi-call trace analyzer & pattern detector
+├── heuristics.py      # Token waste heuristic rules & threshold checks
+├── report.py          # Summary scorecard & savings breakdown generator
+├── examples/          # Sample LLM run trace payloads
+├── LICENSE            # MIT License
+└── README.md
 ```
 
-## 🚀 Quickstart & Installation
+---
 
-### Prerequisites
-- Python 3.9+
-- pip package manager
+## 🚀 Quick Start
 
-### Setup Instructions
+### 1. Installation
+Clone the repository:
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Tarunjit45/tokenlens.git
-   cd tokenlens
-   ```
+```bash
+git clone https://github.com/Tarunjit45/tokenlens.git
+cd tokenlens
+```
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+*Runs with pure Python 3.10+ standard libraries; no heavy external frameworks required.*
 
-3. **Execute application:**
-   ```bash
-   python main.py
-   ```
+### 2. Audit an LLM Run Trace
+Run TokenLens against any exported LLM call trace:
 
-## 📜 Author & License
+```bash
+python cli.py --run examples/sample_run.json
+```
 
-Architected & Developed by **[Tarunjit Biswas](https://github.com/Tarunjit45)**.  
-Distributed under the **MIT License**.
+TokenLens generates a terminal scorecard identifying:
+* 📉 **System Prompt Ratio:** Percentage of total cost spent on static instructions.
+* 🗑️ **Redundancy Score:** Tokens that repeat identical information across sequential turns.
+* 💡 **Estimated Dollar Savings:** Projected savings from context compression and cache optimization.
+
+---
+
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
